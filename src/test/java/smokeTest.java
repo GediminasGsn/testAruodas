@@ -92,7 +92,7 @@ public class smokeTest {
         driver.findElement(By.id("selectSaveButton")).click();
         //Select street
         driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[3]/a")).click();
-        driver.findElement(By.xpath("/html/body/div/ul/li[46]/label")).click();
+        driver.findElement(By.xpath("/html/body/div/ul/li[7]")).click();
         //Apply
         driver.findElement(By.id("selectSaveButton")).click();
         //Room quantity
@@ -104,6 +104,7 @@ public class smokeTest {
         driver.findElement(By.xpath("/html/body/div/ul[2]/li[2]/label/span")).click();
         driver.findElement(By.xpath("/html/body/div/ul[3]/li[6]/label/span")).click();
         //State of property
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[6]/a")).click();
         driver.findElement(By.xpath("/html/body/div/ul/li[1]/a")).click();
         //Search
         driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[10]/a[2]")).click();
