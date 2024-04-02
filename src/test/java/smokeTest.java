@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -109,9 +111,29 @@ public class smokeTest {
         //Search
         driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[10]/a[2]")).click();
 
+    }
+    @Test
+    public void webTest4() {
+//Check searching and verify(search bar)
+        String url = "https://m.aruodas.lt/";
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        //Interact with search bar
+        driver.findElement(By.id("searchFiltersearch_text")).click();
+        driver.findElement(By.id("search_text")).sendKeys("butas");
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[2]/div[2]/div/a")).click();
+        driver.findElement(By.id("submit_search_button")).click();
+        //Verify
+        WebElement message = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[2]/div[1]/h1/a/span[1]"));
+        boolean displayed = message.isDisplayed();
+        String text = message.getText();
+        Assert.assertEquals(text, "Butai");
+        Assert.assertEquals(displayed, true);
 
-
-
+    }
+    @Test
+    public void webTest5() {
 
     }
 }
