@@ -199,4 +199,42 @@ public class smokeTest {
         driver.findElement(By.id("formSubmitButton")).click();
 
     }
+    @Test
+    public void webTest6() {
+//Price calculator
+        String url = "https://m.aruodas.lt/ivertinti-buto-kaina/";
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        //Insert information for calculation
+        //Address
+        driver.findElement(By.id("address")).sendKeys("Rygos gatvė, Vilnius, Vilnius City Municipality");
+        //House number
+        driver.findElement(By.id("street_number")).sendKeys("46");
+        //Building type
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[3]/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[3]/span/ul/li[1]")).click();
+        //House furnishing
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[4]/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[4]/span/ul/li[1]")).click();
+        //Square meters
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[5]/input")).sendKeys("55");
+        //Number of rooms
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[6]/span/input")).sendKeys("2");
+        //Floor
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[7]/span/input")).sendKeys("5");
+        //Number of floors
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[8]/span/input")).sendKeys("6");
+        //Year when building was finished
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[1]/div/div/div[9]/input")).sendKeys("2020");
+        //House heating
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[3]/div[1]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[3]/div[2]/ul/li[2]/label/span")).click();
+        //Email
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[3]/form/div[5]/div[1]/div/input")).sendKeys("gedas3131@gmail.com");
+        //Submit
+        driver.findElement(By.id("submitEvaluateButton")).click();
+
+
+    }
 }
