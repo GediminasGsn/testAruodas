@@ -3,10 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
@@ -235,6 +232,10 @@ public class smokeTest {
         //Submit
         driver.findElement(By.id("submitEvaluateButton")).click();
 
-
+    }
+    @AfterMethod(alwaysRun = true)
+    private void tearDown() {
+        // Close Browser
+        driver.quit();
     }
 }
