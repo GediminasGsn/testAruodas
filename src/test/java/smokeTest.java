@@ -77,7 +77,7 @@ public class smokeTest {
     }
     @Test
     public void webTest3() {
-//Check and validate searching(search bar)
+//Check and validate searching(menu)
         String url = "https://m.aruodas.lt/";
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -134,6 +134,69 @@ public class smokeTest {
     }
     @Test
     public void webTest5() {
+//Create add
+        String url = "https://m.aruodas.lt/";
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        //Navigate to the add creation tab
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/ul/li[1]/a/span[1]")).click();
+        //Select data from menu
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/ul[1]/li[1]/a/span[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/ul[2]/li[1]/a/span[2]")).click();
+        //Enter data for add
+        //County
+        driver.findElement(By.id("chooseRegionInput")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[3]/div[6]/div/ul/li[1]")).click();
+        //Area
+        driver.findElement(By.id("chooseDistrictInput")).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[3]/div[7]/div/ul/li[1]")).click();
+        //Quartal
+        driver.findElement(By.id("chooseQuartalInput")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[3]/div[8]/div/ul/li[2]")).click();
+        //Street
+        driver.findElement(By.id("chooseStreetInput")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div[3]/div[9]/div/ul/li[2]")).click();
+        //Uncheck house number box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[1]/div[5]/div[1]/label/span")).click();
+        //Uncheck flat number box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[1]/div[6]/div[1]/label/span")).click();
+        //Uncheck map box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[1]/div[7]/div/label/span")).click();
+        //Uncheck special number box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[2]/div/div[1]/label/span")).click();
+        //Insert square meters
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[3]/div[1]/label[2]")).click();
+        driver.findElement(By.id("FAreaOverAllValue")).sendKeys("55");
+        //Select room count
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[3]/div[2]/div/div/div/div[2]")).click();
+        //Isert floor
+        driver.findElement(By.id("fieldFFloor")).sendKeys("1");
+        driver.findElement(By.id("fieldFHouseHeight")).sendKeys("5");
+        //House renovation check box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[3]/div[7]/label[2]")).sendKeys("1990");
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[3]/div[8]/div/label/span")).click();
+        driver.findElement(By.id("fieldFRenovatedYear")).sendKeys("2010");
+        //Building type
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[4]/div[1]/div/div[2]/div/div[2]/div[2]")).click();
+        //House furnishing
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[4]/div[2]/div/div[2]/div/div[1]/div[2]")).click();
+        //House heating check box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[4]/div[4]/div[1]/div/label/span")).click();
+        //Price
+
+        driver.findElement(By.id("priceValue")).sendKeys("100000");
+        //Phone number insert
+        driver.findElement(By.id("fieldphone")).sendKeys("61457992");
+        //Insert email
+        driver.findElement(By.id("fieldemail")).sendKeys("mrHeisenberg@gmail.com");
+        //check box
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[8]/div[4]/div/label/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[8]/div[5]/div/label/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[8]/div[7]/div/label/span")).click();
+        //Submit button
+        driver.findElement(By.id("formSubmitButton")).click();
 
     }
 }
