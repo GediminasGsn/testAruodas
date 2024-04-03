@@ -58,11 +58,12 @@ public class smokeTest {
     @Test
     public void webTest2() {
 //Log in with new profile information
-        //Navigate to log in form
+
         String url = "https://m.aruodas.lt/";
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+        //Navigate to login form
         driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/ul/li[5]/a/span[1]")).click();
         driver.findElement(By.xpath("/html/body/div[1]/div/div[5]/ul[1]/li[2]/a")).click();
         //Insert log in data
@@ -98,7 +99,7 @@ public class smokeTest {
         driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[4]/a")).click();
         driver.findElement(By.xpath("/html/body/div/ul[1]/li[3]/label/span")).click();
         driver.findElement(By.xpath("/html/body/div/ul[2]/li[5]/label/span")).click();
-        //Room area
+        //Room square meters
         driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div/ul[3]/li[5]/a")).click();
         driver.findElement(By.xpath("/html/body/div/ul[2]/li[2]/label/span")).click();
         driver.findElement(By.xpath("/html/body/div/ul[3]/li[6]/label/span")).click();
@@ -168,7 +169,7 @@ public class smokeTest {
         driver.findElement(By.id("FAreaOverAllValue")).sendKeys("55");
         //Select room count
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/form/div[1]/div[3]/div[2]/div/div/div/div[2]")).click();
-        //Isert floor
+        //Insert floor
         driver.findElement(By.id("fieldFFloor")).sendKeys("1");
         driver.findElement(By.id("fieldFHouseHeight")).sendKeys("5");
         //House renovation check box
